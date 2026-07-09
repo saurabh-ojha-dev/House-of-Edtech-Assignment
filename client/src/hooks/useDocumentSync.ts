@@ -25,7 +25,7 @@ export function useDocumentSync(roomName: string = 'edtech-document') {
     // 3. Initialize WebSocket provider for syncing with the server
     // We connect to the Node.js WebSocket server we created
     const wsProvider = new WebsocketProvider(
-      process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:1234',
+      process.env.NEXT_PUBLIC_WS_URL || 'wss://house-of-edtech-assignment-0th2.onrender.com',
       roomName,
       doc
     );

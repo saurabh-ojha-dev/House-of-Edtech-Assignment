@@ -11,7 +11,7 @@ dotenv.config();
 const { setupWSConnection, setPersistence } = require('y-websocket/bin/utils');
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.get('/', (req, res) => {

@@ -51,7 +51,7 @@ export function useYjsDocument(docName: string): YjsState {
       })
 
       const provider = new WebsocketProvider(
-        'ws://localhost:1234',
+        process.env.NEXT_PUBLIC_WS_URL || 'wss://house-of-edtech-assignment-0th2.onrender.com',
         docName,
         ydoc,
         { connect: true }
