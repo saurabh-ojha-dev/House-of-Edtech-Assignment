@@ -26,6 +26,7 @@ export default function Editor({ ydoc, provider }: EditorProps) {
     immediatelyRender: false,
     extensions: [
       StarterKit.configure({
+        // @ts-expect-error Tiptap v3 StarterKit types might not include history
         history: false, // History is handled by Yjs
       }),
       Collaboration.configure({
