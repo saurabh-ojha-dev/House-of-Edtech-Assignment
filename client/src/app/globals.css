@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ──────────────────────────────────────────────
+   TipTap / ProseMirror core styles
+────────────────────────────────────────────── */
+.ProseMirror {
+  min-height:400px;
+  outline: none;
+}
+
+/* Placeholder text */
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #94a3b8;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Prose heading overrides */
+.ProseMirror h1 { font-size: 1.75rem; font-weight: 700; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+.ProseMirror h2 { font-size: 1.35rem; font-weight: 700; margin-top: 1rem;    margin-bottom: 0.4rem; }
+.ProseMirror h3 { font-size: 1.1rem;  font-weight: 600; margin-top: 0.75rem; margin-bottom: 0.3rem; }
+
+/* Blockquote */
+.ProseMirror blockquote {
+  border-left: 3px solid #6366f1;
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  color: #475569;
+  background: #f5f3ff;
+  border-radius: 0 6px 6px 0;
+}
+
+/* Inline code */
+.ProseMirror code {
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  color: #6366f1;
+}
+
+/* ──────────────────────────────────────────────
+   Global design tokens
+────────────────────────────────────────────── */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
